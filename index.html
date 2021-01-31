@@ -1,58 +1,65 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Notifications Style 2</title>
-    <link href="css/bootstrap.min.css" rel="stylesheet">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Notifications Style 2</title>
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+<link href="formStyle.css" rel="stylesheet">
 <script src="formValidationTwo.js"></script> 
 </head>
-  <body>
+  <body>
 <div class="row">
 <div class="col-md-3"></div>
 <div class="col-md-9">
-    <h1 id="mainHeading">Enroll Your Pet</h1>
+    <h1 id="mainHeading">Enroll Your Pet</h1>
 <br role="none"/>
 <br role="none"/>
 
 <form name="petForm" aria-labelledby="mainHeading" action="thankyou.html" onSubmit="return formValidation();" novalidate>
-<div id="formErrors" tabindex="0" class="col-md-6">
-<h2 id="errHeading"></h2>
-<ul id="formErrList" aria-labelledby="errHeading"></ul>
-</div>  
 
 <div class="form-group">
-    <label for= "petName">Pet's name</label>
-    <input type="name" class="form-control" id= "petName" aria-describedby="petNameHintText petNameError" placeholder= "Enter your pet's name" required>
-    <small id= "petNameHintText" class="form-text text-muted">The pet’s name must be longer than 5 characters.</small>
-<span><p id="petNameError" class="errText"></p></span>  
+    <label for= "petName">Pet's name</label>
+    <input type="name" class="form-control" id= "petName" aria-describedby="petNameHintText petNameError" placeholder= "Enter your pet's name" required>
+<span>
+    <img src="info.png" alt=""/><span id= "petNameHintText" " style="color:#0469c7;">The pet&rsquo;s name must be longer than 5 characters.</span>
+</span>
+<br/>
+<span id="petNameError" class="petNameError" style="display:none;"><img src="redalert.png" alt=""><span class="errText">Error: The pet&rsquo;s name is too short.</span></span>  
 </div>
-  <div class="form-group">
-    <label for="petType">Pet type</label>
-    <select class="form-control" id="petType" required aria-describedby="petTypeError">
-      <option value="0">--Select--</option>
-      <option value="1">Mouse</option>
-      <option value="2">Cat</option>
-      <option value="3">Dog</option>
-      <option value="4">Goat</option>
-    </select>
-<span><p id="petTypeError" class="errText"></p></span>  
-  
-  </div>
-  <div class="form-check">
-    <input type="checkbox" class="form-check-input" id="confirm" aria-describedby="confirmError" required>
-    <label class="form-check-label" for="confirm">I confirm that the details submitted are correct to the best of my knowledge.</label>
-  <span><p id="confirmError" class="errText"></p></span>  
+<br role="none"/>
+
+  <div class="form-group">
+    <label for="petType">Pet type</label>
+    <select class="form-control" id="petType" required aria-describedby="petTypeError">
+      <option value="0">--Select--</option>
+      <option value="1">Mouse</option>
+      <option value="2">Cat</option>
+      <option value="3">Dog</option>
+      <option value="4">Goat</option>
+    </select>
+<span id="petTypeError" class="petTypeError" style="display:none;" ><img src="redalert.png" alt=""><span class="errText">Error: You must select an option.</span></span>  
+  
+  </div>
+<br role="none"/>
+  <div class="form-check">
+<label class="form-check-label" >
+    <input type="checkbox" class="form-check-input" id="confirm" aria-describedby="confirmError" required>
+I confirm that the details submitted are correct to the best of my knowledge.</label>
 </div>
-  <button type="submit" class="btn btn-primary">Submit</button>
+<div >
+<span id="confirmError" class="confirmError" style="display:none;"><img src="redalert.png" alt=""><span class="errText">Error: You must confirm your pet&rsquo;s information.</span></span>  
+</div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
 
 <div id="formErrors2">
 <span><span id="errCountText"></span><a id="errLink" href="" aria-describedby="errCountText"></a></span>
 </div>
 </form>
-</div>    
+</div>    
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
-  </body>
+    <script src="js/bootstrap.min.js"></script>
+  </body>
 </html>
